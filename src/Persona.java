@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Persona {
     private String nombre;
     private String apellido;
@@ -43,6 +45,21 @@ public class Persona {
 
     public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+    //equals
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Persona)) return false;
+        Persona persona = (Persona) o;
+        return getDni() == persona.getDni() && Objects.equals(getNombre(), persona.getNombre()) && Objects.equals(getApellido(), persona.getApellido()) && Objects.equals(getFechaNacimiento(), persona.getFechaNacimiento());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getNombre(), getApellido(), getDni(), getFechaNacimiento());
     }
 
     @Override

@@ -45,7 +45,6 @@ public class Menu {
         a.agendarContacto(contacto);
     }
     private  void buscarPorDni(){
-        System.out.println("buscar por dni");
         int dni = c.leerInt("Ingrese dni: ");
         a.buscarDni(dni);
     }
